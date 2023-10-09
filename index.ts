@@ -18,8 +18,6 @@ const io = new Server(httpServer, {
 });
 
 io.on("connection", (socket) => {
-    console.log("server connected");
-
     socket.on("beginPath", (arg) => {
         socket.broadcast.emit("beginPath", arg);
     });
